@@ -10,7 +10,7 @@ public class EjemploCRUD {
     ResultSet rs;
     PreparedStatement statement;
 
-    public MovieDAO() {
+    public EjemploCRUD() {
     }
 
     public boolean create(Object o) {
