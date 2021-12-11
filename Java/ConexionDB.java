@@ -1,13 +1,11 @@
-package arielsilva_jennifercoñuel.modelos.db;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import javax.swing.JOptionPane;
 
-public class Conexion {
+public class ConexionDB {
     Connection conectar=null;
     String servidor = "127.0.0.1";
-    String baseDatos = "moviesdb";
+    String baseDatos = "baseDeDatos";
     String usuario = "root";
     String password = "";
   
