@@ -7,6 +7,21 @@ El idioma preferencial será el Español, pero probablemente haga traduccioens a
 
 ### Glosario
 
-- [Ionic](https://github.com/Alwexis/Utilidades/blob/main/Ionic/Primeros%20Pasos.md): Para desarrollo móvil.
-- [Django](https://github.com/Alwexis/Utilidades/blob/main/Guia%20Django.md): Para desarrollo web.
+- Guías y Apuntes:
+
+  - [Ionic](https://github.com/Alwexis/Utilidades/blob/main/Guias/Ionic/Primeros%20Pasos.md)
+    - Para desarrollo Móvil.
+
+  - [Django](https://github.com/Alwexis/Utilidades/blob/main/Guias/Guia%20Django.md)
+    - Para desarrollo Web con Python en el Backend.
+
+- Códigos:
+
+  - [Java](https://github.com/Alwexis/Utilidades/tree/main/Codigos%20y%20Ejemplos/Java)
+  - [Python](https://github.com/Alwexis/Utilidades/tree/main/Codigos%20y%20Ejemplos/Python)
+  - [MySQL/PLSQL](https://github.com/Alwexis/Utilidades/tree/main/Codigos%20y%20Ejemplos/SQL%20y%20PLSQL)
+
+- Otros:
+
+  - [Máquina Virtual en Oracle Gratis](https://github.com/Alwexis/Utilidades/blob/main/VM%20Gratis%20en%20Oracle.md)
 
