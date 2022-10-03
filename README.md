@@ -10,10 +10,7 @@ El idioma preferencial será el Español, pero probablemente haga traduccioens a
 - Guías y Apuntes:
 
   - [Ionic](https://github.com/Alwexis/Utilidades/blob/main/Guias/Ionic/Primeros%20Pasos.md)
-    - Para desarrollo Móvil.
-
   - [Django](https://github.com/Alwexis/Utilidades/blob/main/Guias/Guia%20Django.md)
-    - Para desarrollo Web con Python en el Backend.
 
 - Códigos:
 
