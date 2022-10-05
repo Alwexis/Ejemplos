@@ -9,7 +9,7 @@ El idioma preferencial será el Español, pero probablemente haga traduccioens a
 
 - Guías y Apuntes:
 
-  - [Ionic](https://github.com/Alwexis/Utilidades/blob/main/Guias/Ionic/Primeros%20Pasos.md)
+  - [Ionic](https://github.com/Alwexis/Utilidades/blob/main/Guias/Ionic/1.%20Primeros%20Pasos.md)
   - [Django](https://github.com/Alwexis/Utilidades/blob/main/Guias/Guia%20Django.md)
 
 - Códigos:
