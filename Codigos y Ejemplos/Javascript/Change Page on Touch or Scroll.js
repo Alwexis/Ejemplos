@@ -6,13 +6,15 @@
 const __BODY__ = document.querySelector('body');
 const __TRANSITION_SHADOW__ = document.querySelector('#transition-shadow');
 let __PAGE__ = '';
+let __ACTUAL_SCROLLING__ = 0;
 let __ACTUAL_PAGE__ = 0;
 let __CHANGING_PAGE__ = true;
 const __PAGES__ = [
     'index',
     'about',
+    'stack',
     'projects',
-    'contact'
+    'extra'
 ];
 
 // This code must be on a global javascript file, since every page will use it.
@@ -36,6 +38,28 @@ __BODY__.addEventListener('animationstart', (e) => {
 });
 
 // Touch & Click handlers
+window.onwheel = (e) => {
+    if (__CHANGING_PAGE__) return;
+    if (__ACTUAL_PAGE__ === 0 && e.deltaY < 0) return;
+    if (__ACTUAL_PAGE__ === __PAGES__.length - 1 && e.deltaY > 0) return;
+    __ACTUAL_SCROLLING__ += e.deltaY;
+    if (__ACTUAL_SCROLLING__ >= 300) {
+        if (__ACTUAL_PAGE__ < __PAGES__.length - 1) {
+            __CHANGING_PAGE__ = true;
+            __ACTUAL_SCROLLING__ = 0;
+            __ACTUAL_PAGE__++;
+            changePage(__PAGES__[__ACTUAL_PAGE__], false);
+        }
+    } else if (__ACTUAL_SCROLLING__ <= -300) {
+        if (__ACTUAL_PAGE__ > 0) {
+            __CHANGING_PAGE__ = true;
+            __ACTUAL_SCROLLING__ = 0;
+            __ACTUAL_PAGE__--;
+            changePage(__PAGES__[__ACTUAL_PAGE__], false);
+        }
+    }
+}
+
 __BODY__.ontouchstart = (e) => {
     // I'm storing the Y axis location of the first touch.
     __BODY__.setAttribute('firstYTouchLocation', e.touches[0].clientY)
@@ -91,10 +115,13 @@ __BODY__.onmouseup = (e) => {
     __BODY__.setAttribute('firstYClickLocation', 0);
 }
 
-/* This must be in the page's script file
-
+// Probably most important thing on the code
+// This block of code will detect in which page the user is seeing, when the transition animation ends so we show up the page, etc.
+// In the past commit, we needed to put this on every page's script file, but not anymore p:
 __BODY__.onload = () => {
-    __ACTUAL_PAGE__ = __PAGES__.indexOf('index');
+    __ACTUAL_SCROLLING__ = 0;
+    let page = window.location.pathname.split('/').pop().split('.')[0];
+    __ACTUAL_PAGE__ = __PAGES__.indexOf(page);
     __BODY__.addEventListener('animationend', (e) => {
         if (e.animationName === 'changePageTransition') {
             if (__TRANSITION_SHADOW__.classList.contains('transitionEnd') || __PAGE__ === __PAGES__[__ACTUAL_PAGE__]) {
@@ -104,7 +131,6 @@ __BODY__.onload = () => {
         }
     });
 }
-*/
 
 /* CSS */
 /*
